@@ -5398,6 +5398,7 @@ ops:
     labels:
       - aten
       - pointwise
+      - KernelGen
     kind:
       - Math
     stages:
@@ -5409,6 +5410,7 @@ ops:
     labels:
       - aten
       - pointwise
+      - KernelGen
     kind:
       - Math
     stages:

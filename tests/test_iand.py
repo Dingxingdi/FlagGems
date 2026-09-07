@@ -24,8 +24,7 @@ def test_iand(shape, dtype):
     ref_inp2 = utils.to_reference(inp2)
 
     ref_out = ref_inp1.__iand__(ref_inp2)
-    with flag_gems.use_gems():
-        res_out = inp1.__iand__(inp2)
+    res_out = flag_gems.__iand___tensor(inp1, inp2)
 
     utils.gems_assert_equal(res_out, ref_out)
 
@@ -41,8 +40,7 @@ def test_iand_scalar_int(shape, dtype, scalar):
     ref_inp1 = utils.to_reference(inp1.clone())
 
     ref_out = ref_inp1.__iand__(scalar)
-    with flag_gems.use_gems():
-        res_out = inp1.__iand__(scalar)
+    res_out = flag_gems.__iand___scalar(inp1, scalar)
 
     utils.gems_assert_equal(res_out, ref_out)
 
@@ -55,7 +53,6 @@ def test_iand_scalar_bool(shape, scalar):
     ref_inp1 = utils.to_reference(inp1.clone())
 
     ref_out = ref_inp1.__iand__(scalar)
-    with flag_gems.use_gems():
-        res_out = inp1.__iand__(scalar)
+    res_out = flag_gems.__iand___scalar(inp1, scalar)
 
     utils.gems_assert_equal(res_out, ref_out)
